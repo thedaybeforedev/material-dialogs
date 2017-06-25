@@ -152,7 +152,6 @@ class DialogInit {
 
     // Button views initially used by checkIfStackingNeeded()
     dialog.positiveButton = (MDButton) dialog.view.findViewById(R.id.md_buttonDefaultPositive);
-    dialog.neutralButton = (MDButton) dialog.view.findViewById(R.id.md_buttonDefaultNeutral);
     dialog.negativeButton = (MDButton) dialog.view.findViewById(R.id.md_buttonDefaultNegative);
 
     // Don't allow the submit button to not be shown for input dialogs
@@ -162,19 +161,15 @@ class DialogInit {
 
     // Set up the initial visibility of action buttons based on whether or not text was set
     dialog.positiveButton.setVisibility(builder.positiveText != null ? View.VISIBLE : View.GONE);
-    dialog.neutralButton.setVisibility(builder.neutralText != null ? View.VISIBLE : View.GONE);
     dialog.negativeButton.setVisibility(builder.negativeText != null ? View.VISIBLE : View.GONE);
 
     // Set up the focus of action buttons
     dialog.positiveButton.setFocusable(true);
-    dialog.neutralButton.setFocusable(true);
     dialog.negativeButton.setFocusable(true);
     if (builder.positiveFocus) {
       dialog.positiveButton.requestFocus();
     }
-    if (builder.neutralFocus) {
-      dialog.neutralButton.requestFocus();
-    }
+
     if (builder.negativeFocus) {
       dialog.negativeButton.requestFocus();
     }
@@ -272,7 +267,6 @@ class DialogInit {
     }
 
     // Setup action buttons
-    dialog.view.setButtonGravity(builder.buttonsGravity);
     dialog.view.setButtonStackedGravity(builder.btnStackedGravity);
     dialog.view.setStackingBehavior(builder.stackingBehavior);
     boolean textAllCaps;
@@ -309,16 +303,6 @@ class DialogInit {
     dialog.negativeButton.setOnClickListener(dialog);
     dialog.negativeButton.setVisibility(View.VISIBLE);
 
-    MDButton neutralTextView = dialog.neutralButton;
-    dialog.setTypeface(neutralTextView, builder.mediumFont);
-    neutralTextView.setAllCapsCompat(textAllCaps);
-    neutralTextView.setText(builder.neutralText);
-    neutralTextView.setTextColor(builder.neutralColor);
-    dialog.neutralButton.setStackedSelector(dialog.getButtonSelector(DialogAction.NEUTRAL, true));
-    dialog.neutralButton.setDefaultSelector(dialog.getButtonSelector(DialogAction.NEUTRAL, false));
-    dialog.neutralButton.setTag(DialogAction.NEUTRAL);
-    dialog.neutralButton.setOnClickListener(dialog);
-    dialog.neutralButton.setVisibility(View.VISIBLE);
 
     // Setup list dialog stuff
     if (builder.listCallbackMultiChoice != null) {

@@ -6,6 +6,8 @@ import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.util.AttributeSet;
 import android.view.Gravity;
+import android.widget.LinearLayout;
+import android.widget.TableLayout;
 import android.widget.TextView;
 import com.afollestad.materialdialogs.GravityEnum;
 import com.afollestad.materialdialogs.R;
@@ -35,7 +37,7 @@ public class MDButton extends TextView {
   private void init(Context context) {
     stackedEndPadding =
         context.getResources().getDimensionPixelSize(R.dimen.md_dialog_frame_margin);
-    stackedGravity = GravityEnum.END;
+    stackedGravity = GravityEnum.CENTER;
   }
 
   /**

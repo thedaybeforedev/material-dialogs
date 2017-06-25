@@ -47,7 +47,6 @@ import com.afollestad.materialdialogs.internal.MDRootLayout;
 import com.afollestad.materialdialogs.internal.MDTintHelper;
 import com.afollestad.materialdialogs.internal.ThemeSingleton;
 import com.afollestad.materialdialogs.util.DialogUtils;
-import com.afollestad.materialdialogs.util.RippleHelper;
 import com.afollestad.materialdialogs.util.TypefaceHelper;
 import java.text.NumberFormat;
 import java.util.ArrayList;
@@ -77,7 +76,6 @@ public class MaterialDialog extends DialogBase
   TextView inputMinMax;
   CheckBox checkBoxPrompt;
   MDButton positiveButton;
-  MDButton neutralButton;
   MDButton negativeButton;
   ListType listType;
   List<Integer> selectedIndicesList;
@@ -324,26 +322,7 @@ public class MaterialDialog extends DialogBase
               return d;
             }
             d = DialogUtils.resolveDrawable(getContext(), R.attr.md_btn_positive_selector);
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-              RippleHelper.applyColor(d, builder.buttonRippleColor);
-            }
-            return d;
-          }
-        case NEUTRAL:
-          {
-            if (builder.btnSelectorNeutral != 0) {
-              return ResourcesCompat.getDrawable(
-                  builder.context.getResources(), builder.btnSelectorNeutral, null);
-            }
-            Drawable d =
-                DialogUtils.resolveDrawable(builder.context, R.attr.md_btn_neutral_selector);
-            if (d != null) {
-              return d;
-            }
-            d = DialogUtils.resolveDrawable(getContext(), R.attr.md_btn_neutral_selector);
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-              RippleHelper.applyColor(d, builder.buttonRippleColor);
-            }
+
             return d;
           }
         case NEGATIVE:
@@ -358,9 +337,7 @@ public class MaterialDialog extends DialogBase
               return d;
             }
             d = DialogUtils.resolveDrawable(getContext(), R.attr.md_btn_negative_selector);
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-              RippleHelper.applyColor(d, builder.buttonRippleColor);
-            }
+
             return d;
           }
       }
@@ -437,20 +414,6 @@ public class MaterialDialog extends DialogBase
           }
           break;
         }
-      case NEUTRAL:
-        {
-          if (builder.callback != null) {
-            builder.callback.onAny(this);
-            builder.callback.onNeutral(this);
-          }
-          if (builder.onNeutralCallback != null) {
-            builder.onNeutralCallback.onClick(this, tag);
-          }
-          if (builder.autoDismiss) {
-            dismiss();
-          }
-          break;
-        }
     }
     if (builder.onAnyCallback != null) {
       builder.onAnyCallback.onClick(this, tag);
@@ -481,8 +444,6 @@ public class MaterialDialog extends DialogBase
     switch (which) {
       default:
         return positiveButton;
-      case NEUTRAL:
-        return neutralButton;
       case NEGATIVE:
         return negativeButton;
     }
@@ -549,11 +510,6 @@ public class MaterialDialog extends DialogBase
         positiveButton.setText(title);
         positiveButton.setVisibility(title == null ? View.GONE : View.VISIBLE);
         break;
-      case NEUTRAL:
-        builder.neutralText = title;
-        neutralButton.setText(title);
-        neutralButton.setVisibility(title == null ? View.GONE : View.VISIBLE);
-        break;
       case NEGATIVE:
         builder.negativeText = title;
         negativeButton.setText(title);
@@ -593,9 +549,7 @@ public class MaterialDialog extends DialogBase
     if (builder.positiveText != null && positiveButton.getVisibility() == View.VISIBLE) {
       number++;
     }
-    if (builder.neutralText != null && neutralButton.getVisibility() == View.VISIBLE) {
-      number++;
-    }
+
     if (builder.negativeText != null && negativeButton.getVisibility() == View.VISIBLE) {
       number++;
     }
@@ -1092,7 +1046,6 @@ public class MaterialDialog extends DialogBase
     protected CharSequence neutralText;
     protected CharSequence negativeText;
     protected boolean positiveFocus;
-    protected boolean neutralFocus;
     protected boolean negativeFocus;
     protected View customView;
     protected int widgetColor;
@@ -1736,11 +1689,6 @@ public class MaterialDialog extends DialogBase
       return this;
     }
 
-    public Builder neutralFocus(boolean isFocusedDefault) {
-      this.neutralFocus = isFocusedDefault;
-      return this;
-    }
-
     public Builder linkColor(@ColorInt int color) {
       return linkColor(DialogUtils.getActionTextStateList(context, color));
     }
@@ -1780,9 +1728,7 @@ public class MaterialDialog extends DialogBase
         default:
           this.btnSelectorPositive = selectorRes;
           break;
-        case NEUTRAL:
-          this.btnSelectorNeutral = selectorRes;
-          break;
+
         case NEGATIVE:
           this.btnSelectorNegative = selectorRes;
           break;

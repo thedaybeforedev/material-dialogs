@@ -23,14 +23,6 @@
       </intent-filter>
     </activity>
 
-    <activity
-      android:label="@string/preference_dialogs"
-      android:name=".PreferenceActivity" />
-
-    <activity
-      android:label="@string/preference_dialogs"
-      android:name=".PreferenceActivityCompat" />
-
   </application>
 
 </manifest>

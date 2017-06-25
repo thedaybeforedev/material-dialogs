@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<inset xmlns:android="http://schemas.android.com/apk/res/android"
+    android:insetBottom="@dimen/md_button_inset_vertical"
+    android:insetLeft="@dimen/md_button_inset_horizontal"
+    android:insetRight="@dimen/md_button_inset_horizontal"
+    android:insetTop="@dimen/md_button_inset_vertical" >
+    <shape android:shape="rectangle" >
+    </shape>
+</inset>

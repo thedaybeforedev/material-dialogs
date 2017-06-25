@@ -33,10 +33,6 @@ import com.afollestad.materialdialogs.GravityEnum;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.afollestad.materialdialogs.StackingBehavior;
 import com.afollestad.materialdialogs.Theme;
-import com.afollestad.materialdialogs.color.CircleView;
-import com.afollestad.materialdialogs.color.ColorChooserDialog;
-import com.afollestad.materialdialogs.folderselector.FileChooserDialog;
-import com.afollestad.materialdialogs.folderselector.FolderChooserDialog;
 import com.afollestad.materialdialogs.internal.MDTintHelper;
 import com.afollestad.materialdialogs.internal.ThemeSingleton;
 import com.afollestad.materialdialogs.simplelist.MaterialSimpleListAdapter;
@@ -46,9 +42,7 @@ import java.io.File;
 
 /** @author Aidan Follestad (afollestad) */
 public class MainActivity extends AppCompatActivity
-    implements FolderChooserDialog.FolderCallback,
-        FileChooserDialog.FileCallback,
-        ColorChooserDialog.ColorCallback {
+    {
 
   private static final int STORAGE_PERMISSION_RC = 69;
   static int index = 0;
@@ -185,9 +179,9 @@ public class MainActivity extends AppCompatActivity
     new MaterialDialog.Builder(this)
         .title(R.string.useGoogleLocationServices)
         .content(R.string.useGoogleLocationServicesPrompt)
-        .positiveText(R.string.agree)
+//        .positiveText(R.string.agree)
         .negativeText(R.string.disagree)
-        .neutralText(R.string.more_info)
+//        .neutralText(R.string.more_info)
         .show();
   }
 
@@ -537,88 +531,6 @@ public class MainActivity extends AppCompatActivity
         .show();
   }
 
-  @OnClick(R.id.colorChooser_primary)
-  public void showColorChooserPrimary() {
-    new ColorChooserDialog.Builder(this, R.string.color_palette)
-        .titleSub(R.string.colors)
-        .preselect(primaryPreselect)
-        .show();
-  }
-
-  @OnClick(R.id.colorChooser_accent)
-  public void showColorChooserAccent() {
-    new ColorChooserDialog.Builder(this, R.string.color_palette)
-        .titleSub(R.string.colors)
-        .accentMode(true)
-        .preselect(accentPreselect)
-        .show();
-  }
-
-  @OnClick(R.id.colorChooser_customColors)
-  public void showColorChooserCustomColors() {
-    int[][] subColors =
-        new int[][] {
-          new int[] {
-            Color.parseColor("#EF5350"), Color.parseColor("#F44336"), Color.parseColor("#E53935")
-          },
-          new int[] {
-            Color.parseColor("#EC407A"), Color.parseColor("#E91E63"), Color.parseColor("#D81B60")
-          },
-          new int[] {
-            Color.parseColor("#AB47BC"), Color.parseColor("#9C27B0"), Color.parseColor("#8E24AA")
-          },
-          new int[] {
-            Color.parseColor("#7E57C2"), Color.parseColor("#673AB7"), Color.parseColor("#5E35B1")
-          },
-          new int[] {
-            Color.parseColor("#5C6BC0"), Color.parseColor("#3F51B5"), Color.parseColor("#3949AB")
-          },
-          new int[] {
-            Color.parseColor("#42A5F5"), Color.parseColor("#2196F3"), Color.parseColor("#1E88E5")
-          }
-        };
-
-    new ColorChooserDialog.Builder(this, R.string.color_palette)
-        .titleSub(R.string.colors)
-        .preselect(primaryPreselect)
-        .customColors(R.array.custom_colors, subColors)
-        .show();
-  }
-
-  @OnClick(R.id.colorChooser_customColorsNoSub)
-  public void showColorChooserCustomColorsNoSub() {
-    new ColorChooserDialog.Builder(this, R.string.color_palette)
-        .titleSub(R.string.colors)
-        .preselect(primaryPreselect)
-        .customColors(R.array.custom_colors, null)
-        .show();
-  }
-
-  // Receives callback from color chooser dialog
-  @Override
-  public void onColorSelection(@NonNull ColorChooserDialog dialog, @ColorInt int color) {
-    if (dialog.isAccentMode()) {
-      accentPreselect = color;
-      ThemeSingleton.get().positiveColor = DialogUtils.getActionTextStateList(this, color);
-      ThemeSingleton.get().neutralColor = DialogUtils.getActionTextStateList(this, color);
-      ThemeSingleton.get().negativeColor = DialogUtils.getActionTextStateList(this, color);
-      ThemeSingleton.get().widgetColor = color;
-    } else {
-      primaryPreselect = color;
-      if (getSupportActionBar() != null) {
-        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(color));
-      }
-      if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-        getWindow().setStatusBarColor(CircleView.shiftColorDown(color));
-        getWindow().setNavigationBarColor(color);
-      }
-    }
-  }
-
-  @Override
-  public void onColorChooserDismissed(@NonNull ColorChooserDialog dialog) {
-    showToast("Color chooser dismissed!");
-  }
 
   @OnClick(R.id.themed)
   public void showThemed() {
@@ -655,60 +567,6 @@ public class MainActivity extends AppCompatActivity
         .show();
   }
 
-  @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
-  @OnClick(R.id.file_chooser)
-  public void showFileChooser() {
-    chooserDialog = R.id.file_chooser;
-    if (ActivityCompat.checkSelfPermission(
-            MainActivity.this, Manifest.permission.READ_EXTERNAL_STORAGE)
-        != PackageManager.PERMISSION_GRANTED) {
-      ActivityCompat.requestPermissions(
-          MainActivity.this,
-          new String[] {Manifest.permission.READ_EXTERNAL_STORAGE},
-          STORAGE_PERMISSION_RC);
-      return;
-    }
-    new FileChooserDialog.Builder(this).show();
-  }
-
-  @Override
-  public void onFileSelection(@NonNull FileChooserDialog dialog, @NonNull File file) {
-    showToast(file.getAbsolutePath());
-  }
-
-  @Override
-  public void onFileChooserDismissed(@NonNull FileChooserDialog dialog) {
-    showToast("File chooser dismissed!");
-  }
-
-  @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
-  @OnClick(R.id.folder_chooser)
-  public void showFolderChooser() {
-    chooserDialog = R.id.folder_chooser;
-    if (ActivityCompat.checkSelfPermission(
-            MainActivity.this, Manifest.permission.WRITE_EXTERNAL_STORAGE)
-        != PackageManager.PERMISSION_GRANTED) {
-      ActivityCompat.requestPermissions(
-          MainActivity.this,
-          new String[] {Manifest.permission.WRITE_EXTERNAL_STORAGE},
-          STORAGE_PERMISSION_RC);
-      return;
-    }
-    new FolderChooserDialog.Builder(MainActivity.this)
-        .chooseButton(R.string.md_choose_label)
-        .allowNewFolder(true, 0)
-        .show();
-  }
-
-  @Override
-  public void onFolderSelection(@NonNull FolderChooserDialog dialog, @NonNull File folder) {
-    showToast(folder.getAbsolutePath());
-  }
-
-  @Override
-  public void onFolderChooserDismissed(@NonNull FolderChooserDialog dialog) {
-    showToast("Folder chooser dismissed!");
-  }
 
   @OnClick(R.id.input)
   public void showInputDialog() {
@@ -835,14 +693,7 @@ public class MainActivity extends AppCompatActivity
         .show();
   }
 
-  @OnClick(R.id.preference_dialogs)
-  public void showPreferenceDialogs() {
-    if (Build.VERSION.SDK_INT > Build.VERSION_CODES.GINGERBREAD_MR1) {
-      startActivity(new Intent(getApplicationContext(), PreferenceActivity.class));
-    } else {
-      startActivity(new Intent(getApplicationContext(), PreferenceActivityCompat.class));
-    }
-  }
+
 
   @Override
   public boolean onCreateOptionsMenu(Menu menu) {

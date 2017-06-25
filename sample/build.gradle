@@ -40,7 +40,6 @@ android {
 
 dependencies {
     compile project(':core')
-    compile project(':commons')
 
     compile 'com.android.support:gridlayout-v7:' + versions.supportLib
 
