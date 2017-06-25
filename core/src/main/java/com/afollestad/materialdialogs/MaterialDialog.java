@@ -63,11 +63,13 @@ public class MaterialDialog extends DialogBase
   protected final Builder builder;
   private final Handler handler;
   protected ImageView icon;
+  protected TextView headingInfo;
   protected TextView title;
   protected TextView content;
 
   EditText input;
   RecyclerView recyclerView;
+  View headingInfoFrame;
   View titleFrame;
   FrameLayout customViewFrame;
   ProgressBar progressBar;
@@ -1042,6 +1044,7 @@ public class MaterialDialog extends DialogBase
     protected int contentColor = -1;
     protected CharSequence content;
     protected ArrayList<CharSequence> items;
+    protected CharSequence headingInfoText;
     protected CharSequence positiveText;
     protected CharSequence neutralText;
     protected CharSequence negativeText;
@@ -1381,6 +1384,11 @@ public class MaterialDialog extends DialogBase
 
     public Builder iconAttr(@AttrRes int iconAttr) {
       this.icon = DialogUtils.resolveDrawable(context, iconAttr);
+      return this;
+    }
+
+    public Builder headingInfoText(@NonNull CharSequence message) {
+      this.headingInfoText = message;
       return this;
     }
 

@@ -177,6 +177,7 @@ public class MainActivity extends AppCompatActivity
   @OnClick(R.id.neutral)
   public void showNeutral() {
     new MaterialDialog.Builder(this)
+            .headingInfoText("gkgkgk")
         .title(R.string.useGoogleLocationServices)
         .content(R.string.useGoogleLocationServicesPrompt)
 //        .positiveText(R.string.agree)

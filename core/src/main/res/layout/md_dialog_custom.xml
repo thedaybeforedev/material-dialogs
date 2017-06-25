@@ -5,6 +5,8 @@
   android:layout_height="wrap_content"
   android:orientation="vertical">
 
+  <include layout="@layout/md_stub_headinginfoframe" />
+
   <include layout="@layout/md_stub_titleframe"/>
 
   <FrameLayout

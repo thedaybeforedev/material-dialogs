@@ -143,6 +143,8 @@ class DialogInit {
     }
 
     // Retrieve references to views
+    dialog.headingInfoFrame = dialog.view.findViewById(R.id.md_headingInfoFrame);
+    dialog.headingInfo = (TextView) dialog.view.findViewById(R.id.md_headinginfo);
     dialog.title = (TextView) dialog.view.findViewById(R.id.md_title);
     dialog.icon = (ImageView) dialog.view.findViewById(R.id.md_icon);
     dialog.titleFrame = dialog.view.findViewById(R.id.md_titleFrame);
@@ -211,6 +213,15 @@ class DialogInit {
           DialogUtils.resolveColor(builder.context, R.attr.md_divider_color, dividerFallback);
     }
     dialog.view.setDividerColor(builder.dividerColor);
+
+
+
+    if (builder.headingInfoText == null) {
+      dialog.headingInfoFrame.setVisibility(View.GONE);
+    } else {
+      dialog.headingInfo.setText(builder.title);
+      dialog.headingInfoFrame.setVisibility(View.VISIBLE);
+    }
 
     // Setup title and title frame
     if (dialog.title != null) {
