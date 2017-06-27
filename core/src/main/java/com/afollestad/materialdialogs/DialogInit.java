@@ -75,7 +75,9 @@ class DialogInit {
       return R.layout.md_dialog_input;
     } else if (builder.checkBoxPrompt != null) {
       return R.layout.md_dialog_basic_check;
-    } else {
+    } else if(builder.image != null) {
+      return R.layout.md_dialog_image;
+    }else {
       return R.layout.md_dialog_basic;
     }
   }
@@ -152,6 +154,8 @@ class DialogInit {
     dialog.recyclerView = (RecyclerView) dialog.view.findViewById(R.id.md_contentRecyclerView);
     dialog.checkBoxPrompt = (CheckBox) dialog.view.findViewById(R.id.md_promptCheckbox);
 
+    dialog.imageInfo = (ImageView) dialog.view.findViewById(R.id.md_imageinfo);
+
     // Button views initially used by checkIfStackingNeeded()
     dialog.positiveButton = (MDButton) dialog.view.findViewById(R.id.md_buttonDefaultPositive);
     dialog.negativeButton = (MDButton) dialog.view.findViewById(R.id.md_buttonDefaultNegative);
@@ -190,6 +194,14 @@ class DialogInit {
       }
     }
 
+    //Setup Image
+    if(builder.image != null && dialog.imageInfo != null) {
+      dialog.imageInfo.setImageDrawable(builder.image);
+      dialog.imageInfo.setVisibility(View.VISIBLE);
+    }else if(dialog.imageInfo != null){
+      dialog.imageInfo.setVisibility(View.GONE);
+    }
+
     // Setup icon size limiting
     int maxIconSize = builder.maxIconSize;
     if (maxIconSize == -1) {
@@ -216,9 +228,9 @@ class DialogInit {
 
 
 
-    if (builder.headingInfoText == null) {
+    if (builder.headingInfoText == null && dialog.headingInfoFrame != null) {
       dialog.headingInfoFrame.setVisibility(View.GONE);
-    } else {
+    } else if(dialog.headingInfoFrame != null){
       dialog.headingInfo.setText(builder.title);
       dialog.headingInfoFrame.setVisibility(View.VISIBLE);
     }

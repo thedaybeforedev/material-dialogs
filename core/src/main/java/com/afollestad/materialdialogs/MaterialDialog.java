@@ -63,6 +63,7 @@ public class MaterialDialog extends DialogBase
   protected final Builder builder;
   private final Handler handler;
   protected ImageView icon;
+  protected ImageView imageInfo;
   protected TextView headingInfo;
   protected TextView title;
   protected TextView content;
@@ -1079,6 +1080,7 @@ public class MaterialDialog extends DialogBase
     protected Typeface regularFont;
     protected Typeface mediumFont;
     protected Drawable icon;
+    protected Drawable image;
     protected boolean limitIconToDefaultSize;
     protected int maxIconSize = -1;
     protected RecyclerView.Adapter<?> adapter;
@@ -1384,6 +1386,11 @@ public class MaterialDialog extends DialogBase
 
     public Builder iconAttr(@AttrRes int iconAttr) {
       this.icon = DialogUtils.resolveDrawable(context, iconAttr);
+      return this;
+    }
+
+    public Builder imageInfo(@NonNull Drawable image) {
+      this.image = image;
       return this;
     }
 
