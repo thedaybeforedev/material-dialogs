@@ -1,11 +1,7 @@
 apply plugin: 'com.android.library'
-apply from: '../dependencies.gradle'
+apply plugin: 'com.github.dcendents.android-maven'
 
-ext {
-    PUBLISH_GROUP_ID = 'com.afollestad.material-dialogs'
-    PUBLISH_ARTIFACT_ID = 'core'
-    PUBLISH_VERSION = versions.publishVersion
-}
+
 
 android {
     compileSdkVersion versions.compileSdk
@@ -38,4 +34,4 @@ dependencies {
     compile 'me.zhanghai.android.materialprogressbar:library:' + versions.mdProgressBar
 }
 
-apply from: 'https://raw.githubusercontent.com/afollestad/aidanfollestad.com/master/android-lib-release.gradle'
+group='com.github.ssquarew'
