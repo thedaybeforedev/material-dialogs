@@ -1,4 +1,4 @@
-package com.afollestad.materialdialogs.internal;
+package com.initialz.materialdialogs.internal;
 
 import android.content.Context;
 import android.graphics.Rect;

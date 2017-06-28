@@ -1,4 +1,4 @@
-package com.afollestad.materialdialogs;
+package com.initialz.materialdialogs;
 
 import android.app.Dialog;
 import android.content.Context;
@@ -6,7 +6,7 @@ import android.content.DialogInterface;
 import android.support.annotation.NonNull;
 import android.view.View;
 import android.view.ViewGroup;
-import com.afollestad.materialdialogs.internal.MDRootLayout;
+import com.initialz.materialdialogs.internal.MDRootLayout;
 
 /** @author Aidan Follestad (afollestad) */
 class DialogBase extends Dialog implements DialogInterface.OnShowListener {

@@ -1,4 +1,4 @@
-package com.afollestad.materialdialogs;
+package com.initialz.materialdialogs;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -42,12 +42,12 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.RadioButton;
 import android.widget.TextView;
-import com.afollestad.materialdialogs.internal.MDButton;
-import com.afollestad.materialdialogs.internal.MDRootLayout;
-import com.afollestad.materialdialogs.internal.MDTintHelper;
-import com.afollestad.materialdialogs.internal.ThemeSingleton;
-import com.afollestad.materialdialogs.util.DialogUtils;
-import com.afollestad.materialdialogs.util.TypefaceHelper;
+import com.initialz.materialdialogs.internal.MDButton;
+import com.initialz.materialdialogs.internal.MDRootLayout;
+import com.initialz.materialdialogs.internal.MDTintHelper;
+import com.initialz.materialdialogs.internal.ThemeSingleton;
+import com.initialz.materialdialogs.util.DialogUtils;
+import com.initialz.materialdialogs.util.TypefaceHelper;
 import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.Arrays;

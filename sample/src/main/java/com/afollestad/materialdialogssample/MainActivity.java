@@ -26,20 +26,20 @@ import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.initialz.materialdialogs.DialogAction;
+import com.initialz.materialdialogs.GravityEnum;
+import com.initialz.materialdialogs.MaterialDialog;
+import com.initialz.materialdialogs.StackingBehavior;
+import com.initialz.materialdialogs.Theme;
+import com.initialz.materialdialogs.internal.MDTintHelper;
+import com.initialz.materialdialogs.internal.ThemeSingleton;
+import com.initialz.materialdialogs.simplelist.MaterialSimpleListAdapter;
+import com.initialz.materialdialogs.simplelist.MaterialSimpleListItem;
+import com.initialz.materialdialogs.util.DialogUtils;
+
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import com.afollestad.materialdialogs.DialogAction;
-import com.afollestad.materialdialogs.GravityEnum;
-import com.afollestad.materialdialogs.MaterialDialog;
-import com.afollestad.materialdialogs.StackingBehavior;
-import com.afollestad.materialdialogs.Theme;
-import com.afollestad.materialdialogs.internal.MDTintHelper;
-import com.afollestad.materialdialogs.internal.ThemeSingleton;
-import com.afollestad.materialdialogs.simplelist.MaterialSimpleListAdapter;
-import com.afollestad.materialdialogs.simplelist.MaterialSimpleListItem;
-import com.afollestad.materialdialogs.util.DialogUtils;
-import java.io.File;
-
 /** @author Aidan Follestad (afollestad) */
 public class MainActivity extends AppCompatActivity
     {
@@ -174,14 +174,19 @@ public class MainActivity extends AppCompatActivity
         .show();
   }
 
+
+
   @OnClick(R.id.neutral)
   public void showNeutral() {
+
+    int color = ContextCompat.getColor(this, android.R.color.black);
     new MaterialDialog.Builder(this)
-//            .headingInfoText("gkgkgk")
+            .headingInfoText("gkgkgk")
             .imageInfo(getResources().getDrawable(R.drawable.dialogimage))
         .title(R.string.useGoogleLocationServices)
         .content(R.string.useGoogleLocationServicesPrompt)
 //        .positiveText(R.string.agree)
+        .negativeColor(color)
         .negativeText(R.string.disagree)
 //        .neutralText(R.string.more_info)
         .show();

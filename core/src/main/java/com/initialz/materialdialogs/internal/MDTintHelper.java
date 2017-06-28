@@ -1,4 +1,4 @@
-package com.afollestad.materialdialogs.internal;
+package com.initialz.materialdialogs.internal;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -18,8 +18,8 @@ import android.widget.ProgressBar;
 import android.widget.RadioButton;
 import android.widget.SeekBar;
 import android.widget.TextView;
-import com.afollestad.materialdialogs.R;
-import com.afollestad.materialdialogs.util.DialogUtils;
+import com.initialz.materialdialogs.R;
+import com.initialz.materialdialogs.util.DialogUtils;
 import java.lang.reflect.Field;
 
 /** Tints widgets */

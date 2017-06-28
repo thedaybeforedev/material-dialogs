@@ -1,4 +1,4 @@
-package com.afollestad.materialdialogs;
+package com.initialz.materialdialogs;
 
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;

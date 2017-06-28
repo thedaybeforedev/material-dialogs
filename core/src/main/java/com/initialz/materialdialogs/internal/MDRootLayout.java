@@ -1,4 +1,4 @@
-package com.afollestad.materialdialogs.internal;
+package com.initialz.materialdialogs.internal;
 
 import android.annotation.TargetApi;
 import android.content.Context;
@@ -18,10 +18,10 @@ import android.webkit.WebView;
 import android.widget.AdapterView;
 import android.widget.ScrollView;
 
-import com.afollestad.materialdialogs.GravityEnum;
-import com.afollestad.materialdialogs.R;
-import com.afollestad.materialdialogs.StackingBehavior;
-import com.afollestad.materialdialogs.util.DialogUtils;
+import com.initialz.materialdialogs.GravityEnum;
+import com.initialz.materialdialogs.R;
+import com.initialz.materialdialogs.StackingBehavior;
+import com.initialz.materialdialogs.util.DialogUtils;
 
 /**
  * @author Kevin Barry (teslacoil) 4/02/2015 This is the top level view for all MaterialDialogs It

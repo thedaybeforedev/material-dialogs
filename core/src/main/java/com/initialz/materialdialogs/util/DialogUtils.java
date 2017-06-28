@@ -1,4 +1,4 @@
-package com.afollestad.materialdialogs.util;
+package com.initialz.materialdialogs.util;
 
 import android.content.Context;
 import android.content.DialogInterface;
@@ -18,8 +18,8 @@ import android.support.v4.content.ContextCompat;
 import android.util.TypedValue;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
-import com.afollestad.materialdialogs.GravityEnum;
-import com.afollestad.materialdialogs.MaterialDialog;
+import com.initialz.materialdialogs.GravityEnum;
+import com.initialz.materialdialogs.MaterialDialog;
 
 /** @author Aidan Follestad (afollestad) */
 public class DialogUtils {

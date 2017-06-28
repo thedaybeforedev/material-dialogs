@@ -1,4 +1,4 @@
-package com.afollestad.materialdialogs;
+package com.initialz.materialdialogs;
 
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
@@ -15,8 +15,8 @@ import android.widget.CompoundButton;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.TextView;
-import com.afollestad.materialdialogs.internal.MDTintHelper;
-import com.afollestad.materialdialogs.util.DialogUtils;
+import com.initialz.materialdialogs.internal.MDTintHelper;
+import com.initialz.materialdialogs.util.DialogUtils;
 
 /** @author Aidan Follestad (afollestad) */
 class DefaultRvAdapter extends RecyclerView.Adapter<DefaultRvAdapter.DefaultVH> {

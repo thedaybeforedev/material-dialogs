@@ -1,4 +1,4 @@
-package com.afollestad.materialdialogs.internal;
+package com.initialz.materialdialogs.internal;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -9,9 +9,9 @@ import android.view.Gravity;
 import android.widget.LinearLayout;
 import android.widget.TableLayout;
 import android.widget.TextView;
-import com.afollestad.materialdialogs.GravityEnum;
-import com.afollestad.materialdialogs.R;
-import com.afollestad.materialdialogs.util.DialogUtils;
+import com.initialz.materialdialogs.GravityEnum;
+import com.initialz.materialdialogs.R;
+import com.initialz.materialdialogs.util.DialogUtils;
 
 /** @author Kevin Barry (teslacoil) 4/02/2015 */
 @SuppressLint("AppCompatCustomView")

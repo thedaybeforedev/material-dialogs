@@ -1,4 +1,4 @@
-package com.afollestad.materialdialogs;
+package com.initialz.materialdialogs;
 
 import android.content.res.Resources;
 import android.graphics.Point;
@@ -24,11 +24,11 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.ScrollView;
 import android.widget.TextView;
-import com.afollestad.materialdialogs.internal.MDAdapter;
-import com.afollestad.materialdialogs.internal.MDButton;
-import com.afollestad.materialdialogs.internal.MDRootLayout;
-import com.afollestad.materialdialogs.internal.MDTintHelper;
-import com.afollestad.materialdialogs.util.DialogUtils;
+import com.initialz.materialdialogs.internal.MDAdapter;
+import com.initialz.materialdialogs.internal.MDButton;
+import com.initialz.materialdialogs.internal.MDRootLayout;
+import com.initialz.materialdialogs.internal.MDTintHelper;
+import com.initialz.materialdialogs.util.DialogUtils;
 import java.util.ArrayList;
 import java.util.Arrays;
 import me.zhanghai.android.materialprogressbar.HorizontalProgressDrawable;

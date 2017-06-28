@@ -1,6 +1,6 @@
-package com.afollestad.materialdialogs.internal;
+package com.initialz.materialdialogs.internal;
 
-import com.afollestad.materialdialogs.MaterialDialog;
+import com.initialz.materialdialogs.MaterialDialog;
 
 /** @author Aidan Follestad (afollestad) */
 public interface MDAdapter {

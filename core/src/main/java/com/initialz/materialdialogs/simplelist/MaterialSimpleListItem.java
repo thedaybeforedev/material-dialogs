@@ -1,4 +1,4 @@
-package com.afollestad.materialdialogs.simplelist;
+package com.initialz.materialdialogs.simplelist;
 
 import android.content.Context;
 import android.graphics.Color;
@@ -13,7 +13,7 @@ import android.support.annotation.Nullable;
 import android.support.annotation.StringRes;
 import android.support.v4.content.ContextCompat;
 import android.util.TypedValue;
-import com.afollestad.materialdialogs.util.DialogUtils;
+import com.initialz.materialdialogs.util.DialogUtils;
 
 /** @author Aidan Follestad (afollestad) */
 public class MaterialSimpleListItem {
