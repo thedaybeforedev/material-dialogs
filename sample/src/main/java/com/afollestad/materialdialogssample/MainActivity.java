@@ -181,8 +181,8 @@ public class MainActivity extends AppCompatActivity
 
     int color = ContextCompat.getColor(this, android.R.color.black);
     new MaterialDialog.Builder(this)
-            .headingInfoText("gkgkgk")
-            .imageInfo(getResources().getDrawable(R.drawable.dialogimage))
+//            .headingInfoText("gkgkgk")
+//            .imageInfo(getResources().getDrawable(R.drawable.dialogimage))
         .title(R.string.useGoogleLocationServices)
         .content(R.string.useGoogleLocationServicesPrompt)
 //        .positiveText(R.string.agree)

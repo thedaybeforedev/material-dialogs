@@ -48,6 +48,7 @@ public class MDRootLayout extends ViewGroup {
     private boolean noHeadingInfoNoPadding;
 
     private int noTitlePaddingFull;
+    private int noHeadingInfoPaddingFull;
     private int buttonBarHeight;
 
     /* Margin from dialog frame to first button */
@@ -97,6 +98,7 @@ public class MDRootLayout extends ViewGroup {
         a.recycle();
 
         noTitlePaddingFull = r.getDimensionPixelSize(R.dimen.md_notitle_vertical_padding);
+        noHeadingInfoPaddingFull = r.getDimensionPixelSize(R.dimen.md_noheading_vertical_padding);
 
         buttonHorizontalEdgeMargin = r.getDimensionPixelSize(R.dimen.md_button_padding_frame_side);
         buttonBarHeight = r.getDimensionPixelSize(R.dimen.md_button_height);
@@ -194,17 +196,19 @@ public class MDRootLayout extends ViewGroup {
             imageInfoBar.measure(
                     MeasureSpec.makeMeasureSpec(width, MeasureSpec.EXACTLY), MeasureSpec.UNSPECIFIED);
             availableHeight -= imageInfoBar.getMeasuredHeight();
-        } else if (!noTitleNoPadding) {
-            fullPadding += noTitlePaddingFull;
         }
+//        else if (!noTitleNoPadding) {
+//            fullPadding += noTitlePaddingFull;
+//        }
 
         if (isVisible(headingInfoBar)) {
             headingInfoBar.measure(
                     MeasureSpec.makeMeasureSpec(width, MeasureSpec.EXACTLY), MeasureSpec.UNSPECIFIED);
             availableHeight -= headingInfoBar.getMeasuredHeight();
-        } else if (!noTitleNoPadding) {
-            fullPadding += noTitlePaddingFull;
         }
+//        else if (!noTitleNoPadding) {
+//            fullPadding += noTitlePaddingFull;
+//        }
 
 
 
@@ -261,16 +265,12 @@ public class MDRootLayout extends ViewGroup {
             int height = imageInfoBar.getMeasuredHeight();
             imageInfoBar.layout(l, t, r, t + height);
             t += height;
-        } else if (!noTitleNoPadding && useFullPadding) {
-            t += noTitlePaddingFull;
         }
 
         if (isVisible(headingInfoBar)) {
             int height = headingInfoBar.getMeasuredHeight();
             headingInfoBar.layout(l, t, r, t + height);
             t += height;
-        } else if (!noTitleNoPadding && useFullPadding) {
-            t += noTitlePaddingFull;
         }
 
         if (isVisible(titleBar)) {
