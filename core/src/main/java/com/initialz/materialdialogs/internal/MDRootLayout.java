@@ -283,9 +283,9 @@ public class MDRootLayout extends ViewGroup {
             titleBar.layout(l, t, r, t + height);
             t += height;
         }
-//        else if (!noTitleNoPadding && useFullPadding) {
-//            t += noTitlePaddingFull;
-//        }
+        else if (!noTitleNoPadding && useFullPadding) {
+            t += noTitlePaddingFull;
+        }
 
         if (isVisible(content)) {
             content.layout(l, t, r, t + content.getMeasuredHeight());
