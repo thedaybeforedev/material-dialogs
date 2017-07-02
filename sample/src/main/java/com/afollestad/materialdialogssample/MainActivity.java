@@ -118,6 +118,7 @@ public class MainActivity extends AppCompatActivity
   @OnClick(R.id.basic)
   public void showBasic() {
     new MaterialDialog.Builder(this)
+            .headingInfoText("gkgkgk")
         .title(R.string.useGoogleLocationServices)
         .content(R.string.useGoogleLocationServicesPrompt)
         .positiveText(R.string.agree)
@@ -182,7 +183,7 @@ public class MainActivity extends AppCompatActivity
     int color = ContextCompat.getColor(this, android.R.color.black);
     new MaterialDialog.Builder(this)
 //            .headingInfoText("gkgkgk")
-//            .imageInfo(getResources().getDrawable(R.drawable.dialogimage))
+            .imageInfo(getResources().getDrawable(R.drawable.dialogimage))
         .title(R.string.useGoogleLocationServices)
         .content(R.string.useGoogleLocationServicesPrompt)
 //        .positiveText(R.string.agree)
@@ -207,7 +208,7 @@ public class MainActivity extends AppCompatActivity
   @OnClick(R.id.list)
   public void showList() {
     new MaterialDialog.Builder(this)
-        .title(R.string.socialNetworks)
+        .headingInfoText(getString(R.string.socialNetworks))
         .items(R.array.socialNetworks)
         .itemsCallback((dialog, view, which, text) -> showToast(which + ": " + text))
         .show();
