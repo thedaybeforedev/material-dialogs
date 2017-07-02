@@ -1047,7 +1047,6 @@ public class MaterialDialog extends DialogBase
     protected ArrayList<CharSequence> items;
     protected CharSequence headingInfoText;
     protected CharSequence positiveText;
-    protected CharSequence neutralText;
     protected CharSequence negativeText;
     protected boolean positiveFocus;
     protected boolean negativeFocus;
@@ -1056,7 +1055,6 @@ public class MaterialDialog extends DialogBase
     protected ColorStateList choiceWidgetColor;
     protected ColorStateList positiveColor;
     protected ColorStateList negativeColor;
-    protected ColorStateList neutralColor;
     protected ColorStateList linkColor;
     protected ButtonCallback callback;
     protected SingleButtonCallback onPositiveCallback;
@@ -1120,7 +1118,6 @@ public class MaterialDialog extends DialogBase
     protected boolean contentColorSet = false;
     protected boolean itemColorSet = false;
     protected boolean positiveColorSet = false;
-    protected boolean neutralColorSet = false;
     protected boolean negativeColorSet = false;
     protected boolean widgetColorSet = false;
     protected boolean dividerColorSet = false;
@@ -1144,9 +1141,9 @@ public class MaterialDialog extends DialogBase
             DialogUtils.resolveColor(context, android.R.attr.colorAccent, this.widgetColor);
       }
 
-      this.positiveColor = DialogUtils.getActionTextStateList(context, this.widgetColor);
-      this.negativeColor = DialogUtils.getActionTextStateList(context, this.widgetColor);
-      this.neutralColor = DialogUtils.getActionTextStateList(context, this.widgetColor);
+      this.positiveColor = DialogUtils.getActionTextStateList(context, context.getColor(android.R.color.black));
+      this.negativeColor = DialogUtils.getActionTextStateList(context, context.getColor(android.R.color.black));
+
       this.linkColor =
           DialogUtils.getActionTextStateList(
               context, DialogUtils.resolveColor(context, R.attr.md_link_color, this.widgetColor));
@@ -1244,9 +1241,6 @@ public class MaterialDialog extends DialogBase
       }
       if (s.positiveColor != null) {
         this.positiveColor = s.positiveColor;
-      }
-      if (s.neutralColor != null) {
-        this.neutralColor = s.neutralColor;
       }
       if (s.negativeColor != null) {
         this.negativeColor = s.negativeColor;
@@ -1637,18 +1631,6 @@ public class MaterialDialog extends DialogBase
       return this;
     }
 
-    public Builder neutralText(@StringRes int neutralRes) {
-      if (neutralRes == 0) {
-        return this;
-      }
-      return neutralText(this.context.getText(neutralRes));
-    }
-
-    public Builder neutralText(@NonNull CharSequence message) {
-      this.neutralText = message;
-      return this;
-    }
-
     public Builder negativeColor(@ColorInt int color) {
       return negativeColor(DialogUtils.getActionTextStateList(context, color));
     }
@@ -1682,25 +1664,6 @@ public class MaterialDialog extends DialogBase
 
     public Builder negativeFocus(boolean isFocusedDefault) {
       this.negativeFocus = isFocusedDefault;
-      return this;
-    }
-
-    public Builder neutralColor(@ColorInt int color) {
-      return neutralColor(DialogUtils.getActionTextStateList(context, color));
-    }
-
-    public Builder neutralColorRes(@ColorRes int colorRes) {
-      return neutralColor(DialogUtils.getActionTextColorStateList(this.context, colorRes));
-    }
-
-    public Builder neutralColorAttr(@AttrRes int colorAttr) {
-      return neutralColor(
-          DialogUtils.resolveActionTextColorStateList(this.context, colorAttr, null));
-    }
-
-    public Builder neutralColor(@NonNull ColorStateList colorStateList) {
-      this.neutralColor = colorStateList;
-      this.neutralColorSet = true;
       return this;
     }
 

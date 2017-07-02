@@ -200,7 +200,6 @@ public class MainActivity extends AppCompatActivity
         .content(R.string.useGoogleLocationServicesPrompt)
         .positiveText(R.string.agree)
         .negativeText(R.string.disagree)
-        .neutralText(R.string.more_info)
         .onAny((dialog, which) -> showToast(which.name() + "!"))
         .show();
   }
@@ -273,7 +272,6 @@ public class MainActivity extends AppCompatActivity
               dialog.getItems().add("Item " + index);
               dialog.notifyItemInserted(dialog.getItems().size() - 1);
             })
-        .neutralText(R.string.add_item)
         .show();
   }
 
@@ -333,7 +331,6 @@ public class MainActivity extends AppCompatActivity
         .alwaysCallMultiChoiceCallback()
         .positiveText(R.string.md_choose_label)
         .autoDismiss(false)
-        .neutralText(R.string.clear_selection)
         .show();
   }
 
@@ -427,7 +424,6 @@ public class MainActivity extends AppCompatActivity
         .alwaysCallMultiChoiceCallback()
         .positiveText(R.string.md_choose_label)
         .autoDismiss(false)
-        .neutralText(R.string.clear_selection)
         .itemsDisabledIndices(0, 1)
         .show();
   }
@@ -568,7 +564,6 @@ public class MainActivity extends AppCompatActivity
         .content(R.string.useGoogleLocationServicesPrompt)
         .positiveText(R.string.agree)
         .negativeText(R.string.disagree)
-        .neutralText(R.string.more_info)
         .showListener(dialog -> showToast("onShow"))
         .cancelListener(dialog -> showToast("onCancel"))
         .dismissListener(dialog -> showToast("onDismiss"))

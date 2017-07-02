@@ -111,11 +111,7 @@ class DialogInit {
           DialogUtils.resolveActionTextColorStateList(
               builder.context, R.attr.md_positive_color, builder.positiveColor);
     }
-    if (!builder.neutralColorSet) {
-      builder.neutralColor =
-          DialogUtils.resolveActionTextColorStateList(
-              builder.context, R.attr.md_neutral_color, builder.neutralColor);
-    }
+
     if (!builder.negativeColorSet) {
       builder.negativeColor =
           DialogUtils.resolveActionTextColorStateList(

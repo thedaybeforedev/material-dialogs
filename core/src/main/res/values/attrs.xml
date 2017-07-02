@@ -17,7 +17,6 @@
   <attr name="md_link_color" format="color" />
 
   <attr name="md_positive_color" format="color" />
-  <attr name="md_neutral_color" format="color" />
   <attr name="md_negative_color" format="color" />
   <attr name="md_widget_color" format="color" />
 
@@ -27,7 +26,6 @@
 
   <attr name="md_btn_stacked_selector" format="reference" />
   <attr name="md_btn_positive_selector" format="reference" />
-  <attr name="md_btn_neutral_selector" format="reference" />
   <attr name="md_btn_negative_selector" format="reference" />
 
   <attr name="md_btn_ripple_color" format="color" />

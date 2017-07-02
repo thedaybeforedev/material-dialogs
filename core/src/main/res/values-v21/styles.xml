@@ -9,7 +9,6 @@
     <item name="md_list_selector">?android:selectableItemBackground</item>
     <item name="md_btn_stacked_selector">?android:selectableItemBackground</item>
     <item name="md_btn_positive_selector">@drawable/md_btn_selector_ripple</item>
-    <item name="md_btn_neutral_selector">@drawable/md_btn_selector_ripple</item>
     <item name="md_btn_negative_selector">@drawable/md_btn_selector_ripple</item>
   </style>
 
@@ -21,7 +20,6 @@
     <item name="md_list_selector">?android:selectableItemBackground</item>
     <item name="md_btn_stacked_selector">?android:selectableItemBackground</item>
     <item name="md_btn_positive_selector">@drawable/md_btn_selector_ripple_dark</item>
-    <item name="md_btn_neutral_selector">@drawable/md_btn_selector_ripple_dark</item>
     <item name="md_btn_negative_selector">@drawable/md_btn_selector_ripple_dark</item>
   </style>
 

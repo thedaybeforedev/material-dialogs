@@ -17,7 +17,6 @@ public class ThemeSingleton {
   @ColorInt public int titleColor = 0;
   @ColorInt public int contentColor = 0;
   public ColorStateList positiveColor = null;
-  public ColorStateList neutralColor = null;
   public ColorStateList negativeColor = null;
   @ColorInt public int widgetColor = 0;
   @ColorInt public int itemColor = 0;
