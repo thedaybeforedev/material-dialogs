@@ -32,6 +32,15 @@ public class MaterialSimpleListItem {
     return builder.content;
   }
 
+  public CharSequence getDescription() {
+    return builder.description;
+  }
+
+
+  public CharSequence getInfoRight() {
+    return builder.infoRight;
+  }
+
   public int getIconPadding() {
     return builder.iconPadding;
   }
@@ -63,6 +72,8 @@ public class MaterialSimpleListItem {
 
     private final Context context;
     protected Drawable icon;
+    protected CharSequence description;
+    protected CharSequence infoRight;
     protected CharSequence content;
     protected long id;
 
@@ -110,6 +121,24 @@ public class MaterialSimpleListItem {
 
     public Builder content(@StringRes int contentRes) {
       return content(context.getString(contentRes));
+    }
+
+    public Builder description(CharSequence description) {
+      this.description = description;
+      return this;
+    }
+
+    public Builder description(@StringRes int description) {
+      return content(context.getString(description));
+    }
+
+    public Builder infoRight(CharSequence info) {
+      this.infoRight = info;
+      return this;
+    }
+
+    public Builder info(@StringRes int info) {
+      return content(context.getString(info));
     }
 
     public Builder backgroundColor(@ColorInt int color) {

@@ -79,6 +79,8 @@ public class MaterialSimpleListAdapter
       }
       holder.title.setTextColor(dialog.getBuilder().getItemColor());
       holder.title.setText(item.getContent());
+      holder.description.setText(item.getDescription());
+      holder.infoRight.setText(item.getInfoRight());
       dialog.setTypeface(holder.title, dialog.getBuilder().getRegularFont());
     }
   }
@@ -97,12 +99,16 @@ public class MaterialSimpleListAdapter
 
     final ImageView icon;
     final TextView title;
+    final TextView description;
+    final TextView infoRight;
     final MaterialSimpleListAdapter adapter;
 
     SimpleListVH(View itemView, MaterialSimpleListAdapter adapter) {
       super(itemView);
       icon = (ImageView) itemView.findViewById(android.R.id.icon);
       title = (TextView) itemView.findViewById(android.R.id.title);
+      description = (TextView) itemView.findViewById(android.R.id.message);
+      infoRight = (TextView) itemView.findViewById(R.id.info_right);
       this.adapter = adapter;
       itemView.setOnClickListener(this);
     }
