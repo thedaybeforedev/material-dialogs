@@ -9,7 +9,6 @@
     <item name="md_list_selector">@drawable/md_selector</item>
     <item name="md_btn_stacked_selector">@drawable/md_selector</item>
     <item name="md_btn_positive_selector">@drawable/md_btn_selector</item>
-    <item name="md_btn_neutral_selector">@drawable/md_btn_selector</item>
     <item name="md_btn_negative_selector">@drawable/md_btn_selector</item>
 
     <item name="android:actionModeBackground">@color/primary_material_dark</item>
@@ -27,7 +26,6 @@
     <item name="md_list_selector">@drawable/md_selector_dark</item>
     <item name="md_btn_stacked_selector">@drawable/md_selector_dark</item>
     <item name="md_btn_positive_selector">@drawable/md_btn_selector_dark</item>
-    <item name="md_btn_neutral_selector">@drawable/md_btn_selector_dark</item>
     <item name="md_btn_negative_selector">@drawable/md_btn_selector_dark</item>
 
     <item name="android:actionModeBackground">@color/primary_material_dark</item>

@@ -197,18 +197,14 @@ public class MDRootLayout extends ViewGroup {
                     MeasureSpec.makeMeasureSpec(width, MeasureSpec.EXACTLY), MeasureSpec.UNSPECIFIED);
             availableHeight -= imageInfoBar.getMeasuredHeight();
         }
-//        else if (!noTitleNoPadding) {
-//            fullPadding += noTitlePaddingFull;
-//        }
+
 
         if (isVisible(headingInfoBar)) {
             headingInfoBar.measure(
                     MeasureSpec.makeMeasureSpec(width, MeasureSpec.EXACTLY), MeasureSpec.UNSPECIFIED);
             availableHeight -= headingInfoBar.getMeasuredHeight();
         }
-//        else if (!noTitleNoPadding) {
-//            fullPadding += noTitlePaddingFull;
-//        }
+
 
 
 
@@ -216,7 +212,8 @@ public class MDRootLayout extends ViewGroup {
             titleBar.measure(
                     MeasureSpec.makeMeasureSpec(width, MeasureSpec.EXACTLY), MeasureSpec.UNSPECIFIED);
             availableHeight -= titleBar.getMeasuredHeight();
-        } else if (!noTitleNoPadding) {
+        }
+        else if (!noTitleNoPadding) {
             fullPadding += noTitlePaddingFull;
         }
 
@@ -248,9 +245,17 @@ public class MDRootLayout extends ViewGroup {
 
 
         if (drawTopDivider) {
-            int y = titleBar.getTop();
+            int y = 0;
+            if (isVisible(titleBar)){
+                y = titleBar.getTop();
+            }else if(isVisible(headingInfoBar)){
+                y = content.getTop();
+            }
+
             canvas.drawRect(0, y - dividerWidth, getMeasuredWidth(), y, dividerPaint);
         }
+
+
 
         if (drawBottomDivider) {
             int y = content.getBottom();
@@ -277,7 +282,8 @@ public class MDRootLayout extends ViewGroup {
             int height = titleBar.getMeasuredHeight();
             titleBar.layout(l, t, r, t + height);
             t += height;
-        } else if (!noTitleNoPadding && useFullPadding) {
+        }
+        else if (!noTitleNoPadding && useFullPadding) {
             t += noTitlePaddingFull;
         }
 

@@ -9,6 +9,7 @@ import android.support.annotation.LayoutRes;
 import android.support.annotation.NonNull;
 import android.support.annotation.StyleRes;
 import android.support.annotation.UiThread;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.InputType;
 import android.text.method.LinkMovementMethod;
@@ -28,6 +29,7 @@ import com.initialz.materialdialogs.internal.MDAdapter;
 import com.initialz.materialdialogs.internal.MDButton;
 import com.initialz.materialdialogs.internal.MDRootLayout;
 import com.initialz.materialdialogs.internal.MDTintHelper;
+import com.initialz.materialdialogs.simplelist.DividerItemDecoration;
 import com.initialz.materialdialogs.util.DialogUtils;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -111,11 +113,7 @@ class DialogInit {
           DialogUtils.resolveActionTextColorStateList(
               builder.context, R.attr.md_positive_color, builder.positiveColor);
     }
-    if (!builder.neutralColorSet) {
-      builder.neutralColor =
-          DialogUtils.resolveActionTextColorStateList(
-              builder.context, R.attr.md_neutral_color, builder.neutralColor);
-    }
+
     if (!builder.negativeColorSet) {
       builder.negativeColor =
           DialogUtils.resolveActionTextColorStateList(
@@ -231,7 +229,7 @@ class DialogInit {
     if (builder.headingInfoText == null && dialog.headingInfoFrame != null) {
       dialog.headingInfoFrame.setVisibility(View.GONE);
     } else if(dialog.headingInfoFrame != null){
-      dialog.headingInfo.setText(builder.title);
+      dialog.headingInfo.setText(builder.headingInfoText);
       dialog.headingInfoFrame.setVisibility(View.VISIBLE);
     }
 
@@ -347,6 +345,11 @@ class DialogInit {
         }
         builder.adapter =
             new DefaultRvAdapter(dialog, MaterialDialog.ListType.getLayoutForType(dialog.listType));
+
+        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(dialog.recyclerView.getContext());
+
+        dialog.recyclerView.addItemDecoration(dividerItemDecoration);
+
       } else if (builder.adapter instanceof MDAdapter) {
         // Notify simple list adapter of the dialog it belongs to
         ((MDAdapter) builder.adapter).setDialog(dialog);

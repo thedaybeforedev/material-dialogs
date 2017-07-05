@@ -118,6 +118,7 @@ public class MainActivity extends AppCompatActivity
   @OnClick(R.id.basic)
   public void showBasic() {
     new MaterialDialog.Builder(this)
+            .headingInfoText("gkgkgk")
         .title(R.string.useGoogleLocationServices)
         .content(R.string.useGoogleLocationServicesPrompt)
         .positiveText(R.string.agree)
@@ -182,7 +183,7 @@ public class MainActivity extends AppCompatActivity
     int color = ContextCompat.getColor(this, android.R.color.black);
     new MaterialDialog.Builder(this)
 //            .headingInfoText("gkgkgk")
-//            .imageInfo(getResources().getDrawable(R.drawable.dialogimage))
+            .imageInfo(getResources().getDrawable(R.drawable.dialogimage))
         .title(R.string.useGoogleLocationServices)
         .content(R.string.useGoogleLocationServicesPrompt)
 //        .positiveText(R.string.agree)
@@ -199,7 +200,6 @@ public class MainActivity extends AppCompatActivity
         .content(R.string.useGoogleLocationServicesPrompt)
         .positiveText(R.string.agree)
         .negativeText(R.string.disagree)
-        .neutralText(R.string.more_info)
         .onAny((dialog, which) -> showToast(which.name() + "!"))
         .show();
   }
@@ -207,7 +207,7 @@ public class MainActivity extends AppCompatActivity
   @OnClick(R.id.list)
   public void showList() {
     new MaterialDialog.Builder(this)
-        .title(R.string.socialNetworks)
+        .headingInfoText(getString(R.string.socialNetworks))
         .items(R.array.socialNetworks)
         .itemsCallback((dialog, view, which, text) -> showToast(which + ": " + text))
         .show();
@@ -272,7 +272,6 @@ public class MainActivity extends AppCompatActivity
               dialog.getItems().add("Item " + index);
               dialog.notifyItemInserted(dialog.getItems().size() - 1);
             })
-        .neutralText(R.string.add_item)
         .show();
   }
 
@@ -332,7 +331,6 @@ public class MainActivity extends AppCompatActivity
         .alwaysCallMultiChoiceCallback()
         .positiveText(R.string.md_choose_label)
         .autoDismiss(false)
-        .neutralText(R.string.clear_selection)
         .show();
   }
 
@@ -426,7 +424,6 @@ public class MainActivity extends AppCompatActivity
         .alwaysCallMultiChoiceCallback()
         .positiveText(R.string.md_choose_label)
         .autoDismiss(false)
-        .neutralText(R.string.clear_selection)
         .itemsDisabledIndices(0, 1)
         .show();
   }
@@ -573,7 +570,6 @@ public class MainActivity extends AppCompatActivity
         .content(R.string.useGoogleLocationServicesPrompt)
         .positiveText(R.string.agree)
         .negativeText(R.string.disagree)
-        .neutralText(R.string.more_info)
         .showListener(dialog -> showToast("onShow"))
         .cancelListener(dialog -> showToast("onCancel"))
         .dismissListener(dialog -> showToast("onDismiss"))
