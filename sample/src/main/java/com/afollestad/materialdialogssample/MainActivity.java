@@ -436,7 +436,7 @@ public class MainActivity extends AppCompatActivity
     adapter.add(
         new MaterialSimpleListItem.Builder(this)
             .content("username@gmail.com")
-            .icon(R.drawable.ic_account_circle)
+//            .icon(R.drawable.ic_account_circle)
                 .infoRight("iㅁㅁnfo")
                 .description("description")
             .backgroundColor(Color.WHITE)
