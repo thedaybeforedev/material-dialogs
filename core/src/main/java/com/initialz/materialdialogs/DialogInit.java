@@ -158,6 +158,7 @@ class DialogInit {
     dialog.positiveButton = (MDButton) dialog.view.findViewById(R.id.md_buttonDefaultPositive);
     dialog.negativeButton = (MDButton) dialog.view.findViewById(R.id.md_buttonDefaultNegative);
 
+
     // Don't allow the submit button to not be shown for input dialogs
     if (builder.inputCallback != null && builder.positiveText == null) {
       builder.positiveText = builder.context.getText(android.R.string.ok);
@@ -330,6 +331,11 @@ class DialogInit {
       dialog.selectedIndicesList = new ArrayList<>();
     }
     if (dialog.recyclerView != null) {
+
+      DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(dialog.recyclerView.getContext());
+
+      dialog.recyclerView.addItemDecoration(dividerItemDecoration);
+
       if (builder.adapter == null) {
         // Determine list type
         if (builder.listCallbackSingleChoice != null) {
@@ -346,9 +352,7 @@ class DialogInit {
         builder.adapter =
             new DefaultRvAdapter(dialog, MaterialDialog.ListType.getLayoutForType(dialog.listType));
 
-        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(dialog.recyclerView.getContext());
 
-        dialog.recyclerView.addItemDecoration(dividerItemDecoration);
 
       } else if (builder.adapter instanceof MDAdapter) {
         // Notify simple list adapter of the dialog it belongs to

@@ -7,7 +7,7 @@
     style="@style/MD_ActionButton.Text"
     tools:layout_alignParentLeft="true"
     tools:layout_alignParentStart="true"
-    tools:text="Negative"/>
+    tools:text="Negative" />
 
   <com.initialz.materialdialogs.internal.MDButton
     android:id="@+id/md_buttonDefaultPositive"

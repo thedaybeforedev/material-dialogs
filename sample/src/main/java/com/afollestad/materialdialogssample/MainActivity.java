@@ -122,8 +122,8 @@ public class MainActivity extends AppCompatActivity
         .title(R.string.useGoogleLocationServices)
         .content(getResources().getString(R.string.useGoogleLocationServicesPrompt))
 
-        .positiveText(R.string.agree)
-        .negativeText(R.string.disagree)
+        .positiveText("확인")
+        .negativeText("취소")
         .show();
   }
 
