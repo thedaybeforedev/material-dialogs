@@ -2,6 +2,7 @@ package com.initialz.materialdialogs.simplelist;
 
 import android.graphics.PorterDuff;
 import android.support.v7.widget.RecyclerView;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -77,7 +78,13 @@ public class MaterialSimpleListAdapter
       } else {
         holder.icon.setVisibility(View.GONE);
       }
-      holder.title.setTextColor(dialog.getBuilder().getItemColor());
+
+      if (TextUtils.isEmpty(item.getDescription())){
+        holder.description.setVisibility(View.GONE);
+      }else {
+        holder.description.setVisibility(View.VISIBLE);
+      }
+
       holder.title.setText(item.getContent());
       holder.description.setText(item.getDescription());
       holder.infoRight.setText(item.getInfoRight());
