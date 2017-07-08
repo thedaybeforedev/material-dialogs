@@ -448,7 +448,7 @@ public class MainActivity extends AppCompatActivity
             .content("user02@gmail.com")
                 .infoRight("inㄴㅁfo")
                 .infoCheck(false)
-                .description("description")
+//                .description("description")
             .icon(R.drawable.ic_account_circle)
             .backgroundColor(Color.WHITE)
             .build());
