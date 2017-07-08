@@ -36,6 +36,9 @@ public class MaterialSimpleListItem {
     return builder.description;
   }
 
+  public boolean isInfoCheck() {
+    return builder.isInfoCheck;
+  }
 
   public CharSequence getInfoRight() {
     return builder.infoRight;
@@ -75,6 +78,7 @@ public class MaterialSimpleListItem {
     protected CharSequence description;
     protected CharSequence infoRight;
     protected CharSequence content;
+    protected boolean isInfoCheck;
     protected long id;
 
     int iconPadding;
@@ -139,6 +143,11 @@ public class MaterialSimpleListItem {
 
     public Builder info(@StringRes int info) {
       return content(context.getString(info));
+    }
+
+    public Builder infoCheck(boolean isInfoCheck) {
+      this.isInfoCheck = isInfoCheck;
+      return this;
     }
 
     public Builder backgroundColor(@ColorInt int color) {

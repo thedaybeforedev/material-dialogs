@@ -25,7 +25,7 @@
             android:layout_gravity="start|center_vertical"
             android:layout_marginEnd="@dimen/md_simplelist_icon_margin"
             android:layout_marginRight="@dimen/md_simplelist_icon_margin"
-            android:background="@drawable/gray_circle"
+            android:background="@drawable/white_circle"
             android:scaleType="fitXY"
             tools:background="#f5f5f5"
             tools:ignore="ContentDescription" />
@@ -64,13 +64,14 @@
         android:gravity="center_vertical"
         android:textColor="@color/md_simplelist_infoRight" />
 
-    <View
+    <ImageView
         android:id="@+id/info_check"
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
         android:gravity="center_vertical"
+        android:src="@drawable/ico_common_check_normal"
         />
 
 </RelativeLayout>

@@ -438,7 +438,8 @@ public class MainActivity extends AppCompatActivity
         new MaterialSimpleListItem.Builder(this)
             .content("username@gmail.com")
 //            .icon(R.drawable.ic_account_circle)
-                .infoRight("iㅁㅁnfo")
+//                .infoRight("iㅁㅁnfo")
+                .infoCheck(true)
                 .description("description")
             .backgroundColor(Color.WHITE)
             .build());
@@ -446,6 +447,7 @@ public class MainActivity extends AppCompatActivity
         new MaterialSimpleListItem.Builder(this)
             .content("user02@gmail.com")
                 .infoRight("inㄴㅁfo")
+                .infoCheck(false)
                 .description("description")
             .icon(R.drawable.ic_account_circle)
             .backgroundColor(Color.WHITE)

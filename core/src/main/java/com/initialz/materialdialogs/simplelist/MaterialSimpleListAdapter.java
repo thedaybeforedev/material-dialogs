@@ -81,6 +81,8 @@ public class MaterialSimpleListAdapter
       holder.title.setText(item.getContent());
       holder.description.setText(item.getDescription());
       holder.infoRight.setText(item.getInfoRight());
+
+      holder.infoCheck.setVisibility(item.isInfoCheck()?View.VISIBLE:View.GONE);
       dialog.setTypeface(holder.title, dialog.getBuilder().getRegularFont());
     }
   }
@@ -101,6 +103,7 @@ public class MaterialSimpleListAdapter
     final TextView title;
     final TextView description;
     final TextView infoRight;
+    final ImageView infoCheck;
     final MaterialSimpleListAdapter adapter;
 
     SimpleListVH(View itemView, MaterialSimpleListAdapter adapter) {
@@ -109,6 +112,8 @@ public class MaterialSimpleListAdapter
       title = (TextView) itemView.findViewById(android.R.id.title);
       description = (TextView) itemView.findViewById(android.R.id.message);
       infoRight = (TextView) itemView.findViewById(R.id.info_right);
+      infoCheck = (ImageView) itemView.findViewById(R.id.info_check);
+
       this.adapter = adapter;
       itemView.setOnClickListener(this);
     }
