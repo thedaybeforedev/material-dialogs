@@ -120,7 +120,8 @@ public class MainActivity extends AppCompatActivity
     new MaterialDialog.Builder(this)
             .headingInfoText("gkgkgk")
         .title(R.string.useGoogleLocationServices)
-        .content(R.string.useGoogleLocationServicesPrompt)
+        .content(getResources().getString(R.string.useGoogleLocationServicesPrompt))
+
         .positiveText(R.string.agree)
         .negativeText(R.string.disagree)
         .show();

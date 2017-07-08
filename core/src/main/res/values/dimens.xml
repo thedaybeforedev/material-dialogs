@@ -32,7 +32,8 @@
   <!-- Margin around the dialog, excluding the button bar -->
   <dimen name="md_dialog_frame_margin">24dp</dimen>
   <!-- Total title margin bottom is 16, but we split this between content and title -->
-  <dimen name="md_title_frame_margin_bottom">12dp</dimen>
+  <dimen name="md_headinginfo_frame_margin_bottom">12dp</dimen>
+  <dimen name="md_title_frame_margin_bottom">4dp</dimen>
   <dimen name="md_title_frame_margin_bottom_less">6dp</dimen>
   <!-- The desired padding when no title is visible,
        This plus md_content_padding_top should equals md_dialog_frame_margin -->
@@ -41,7 +42,7 @@
 
   <dimen name="md_notitle_vertical_padding_more">20dp</dimen>
 
-  <dimen name="md_content_padding_top">8dp</dimen>
+  <dimen name="md_content_padding_top">4dp</dimen>
   <dimen name="md_simplelistitem_padding_top">8dp</dimen>
 
   <dimen name="md_button_min_width">72dp</dimen>
@@ -57,7 +58,7 @@
   <dimen name="md_neutral_button_margin">12dp</dimen>
 
   <!-- actual content padding bottom is 16dp, but we split between button bar and content -->
-  <dimen name="md_content_padding_bottom">8dp</dimen>
+  <dimen name="md_content_padding_bottom">24dp</dimen>
 
   <dimen name="md_listitem_default_padding">8dp</dimen>
   <dimen name="md_button_frame_vertical_padding">8dp</dimen>
@@ -65,6 +66,7 @@
   <dimen name="md_headinginfo_textsize">14sp</dimen>
   <dimen name="md_title_textsize">20sp</dimen>
   <dimen name="md_content_textsize">14sp</dimen>
+  <dimen name="md_content_min_height">96dp</dimen>
   <dimen name="md_button_textsize">16sp</dimen>
   <dimen name="md_listitem_textsize">18sp</dimen>
   <dimen name="md_listitem_height">64dp</dimen>

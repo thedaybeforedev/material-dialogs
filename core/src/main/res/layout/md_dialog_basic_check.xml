@@ -30,6 +30,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/md_content_padding_top"
         android:paddingLeft="@dimen/md_dialog_frame_margin"
+          android:minHeight="@dimen/md_content_min_height"
         android:paddingRight="@dimen/md_dialog_frame_margin"
         android:textSize="@dimen/md_content_textsize"
         tools:text="Content"/>

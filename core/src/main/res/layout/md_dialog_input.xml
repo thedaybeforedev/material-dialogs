@@ -30,6 +30,7 @@
       android:layout_marginTop="4dp"
       android:fontFamily="sans-serif"
       android:textSize="@dimen/md_content_textsize"
+        android:minHeight="@dimen/md_content_min_height"
       tools:ignore="UnusedAttribute"
       tools:text="Message"/>
 
