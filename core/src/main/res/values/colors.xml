@@ -21,4 +21,6 @@
 
   <color name="md_divider_gray">#dedede</color>
 
+  <color name="md_simplelist_description">#a1a1a1</color>
+  <color name="md_simplelist_infoRight">#ff676f</color>
 </resources>
