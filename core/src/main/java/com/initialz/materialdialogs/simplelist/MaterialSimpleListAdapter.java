@@ -71,10 +71,6 @@ public class MaterialSimpleListAdapter
             item.getIconPadding(),
             item.getIconPadding(),
             item.getIconPadding());
-        holder
-            .icon
-            .getBackground()
-            .setColorFilter(item.getBackgroundColor(), PorterDuff.Mode.SRC_ATOP);
       } else {
         holder.icon.setVisibility(View.GONE);
       }

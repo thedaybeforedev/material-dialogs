@@ -25,9 +25,7 @@
             android:layout_gravity="start|center_vertical"
             android:layout_marginEnd="@dimen/md_simplelist_icon_margin"
             android:layout_marginRight="@dimen/md_simplelist_icon_margin"
-            android:background="@drawable/white_circle"
             android:scaleType="fitXY"
-            tools:background="#f5f5f5"
             tools:ignore="ContentDescription" />
 
         <LinearLayout
