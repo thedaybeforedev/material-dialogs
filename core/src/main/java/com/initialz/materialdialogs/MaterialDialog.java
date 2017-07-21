@@ -21,6 +21,7 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.annotation.StringRes;
 import android.support.annotation.UiThread;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.content.res.ResourcesCompat;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
@@ -1141,8 +1142,8 @@ public class MaterialDialog extends DialogBase
             DialogUtils.resolveColor(context, android.R.attr.colorAccent, this.widgetColor);
       }
 
-      this.positiveColor = DialogUtils.getActionTextStateList(context, context.getColor(android.R.color.black));
-      this.negativeColor = DialogUtils.getActionTextStateList(context, context.getColor(android.R.color.black));
+      this.positiveColor = DialogUtils.getActionTextStateList(context, ContextCompat.getColor(context, android.R.color.black));
+      this.negativeColor = DialogUtils.getActionTextStateList(context, ContextCompat.getColor(context, android.R.color.black));
 
       this.linkColor =
           DialogUtils.getActionTextStateList(
