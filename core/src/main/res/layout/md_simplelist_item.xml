@@ -29,8 +29,8 @@
             tools:ignore="ContentDescription" />
 
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent" android:layout_marginRight="@dimen/md_simpleitem_height"
+            android:layout_height="wrap_content" 
             android:orientation="vertical"  android:layout_centerVertical="true">
 
             <TextView
@@ -39,7 +39,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="@dimen/md_simplelist_title_textsize"
                 android:textColor="@android:color/black"
-                tools:text="Title" />
+                tools:text="Title" android:maxLines="2" />
 
             <TextView
                 android:id="@android:id/message"
