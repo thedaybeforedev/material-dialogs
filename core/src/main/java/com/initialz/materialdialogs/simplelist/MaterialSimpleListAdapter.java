@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import com.initialz.materialdialogs.MaterialDialog;
 import com.initialz.materialdialogs.R;
@@ -86,6 +87,14 @@ public class MaterialSimpleListAdapter
       holder.infoRight.setText(item.getInfoRight());
 
       holder.infoCheck.setVisibility(item.isInfoCheck()?View.VISIBLE:View.GONE);
+
+      if (item.isInfoCheck() || !TextUtils.isEmpty(item.getInfoRight())){
+        ((LinearLayout.LayoutParams)holder.linearLayoutTitle.getLayoutParams()).rightMargin = holder.linearLayoutTitle.getContext().getResources().getDimensionPixelSize(R.dimen.md_simpleitem_title_right_margin);
+      }else {
+        ((LinearLayout.LayoutParams)holder.linearLayoutTitle.getLayoutParams()).rightMargin = 0;
+
+      }
+
       dialog.setTypeface(holder.title, dialog.getBuilder().getRegularFont());
     }
   }
@@ -108,6 +117,7 @@ public class MaterialSimpleListAdapter
     final TextView infoRight;
     final ImageView infoCheck;
     final MaterialSimpleListAdapter adapter;
+    final LinearLayout linearLayoutTitle;
 
     SimpleListVH(View itemView, MaterialSimpleListAdapter adapter) {
       super(itemView);
@@ -116,6 +126,7 @@ public class MaterialSimpleListAdapter
       description = (TextView) itemView.findViewById(android.R.id.message);
       infoRight = (TextView) itemView.findViewById(R.id.info_right);
       infoCheck = (ImageView) itemView.findViewById(R.id.info_check);
+      linearLayoutTitle = (LinearLayout)itemView.findViewById(R.id.linearLayoutTitle);
 
       this.adapter = adapter;
       itemView.setOnClickListener(this);

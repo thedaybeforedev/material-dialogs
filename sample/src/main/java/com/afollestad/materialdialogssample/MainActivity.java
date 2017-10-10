@@ -436,7 +436,7 @@ public class MainActivity extends AppCompatActivity
             (dialog, index1, item) -> showToast(item.getContent().toString()));
     adapter.add(
         new MaterialSimpleListItem.Builder(this)
-            .content("username@gmail.com")
+            .content("username@gmail.comgdfjkdfjkndfjnkdgfsnjkgjkndkjnfdgsnjkfgdsjknfgdskjnfdgsnkjfdgskjnsfdgjkldfgkldfghnlgdfakjnfgdajkdfnfdaghjlabjdffdbnajfdafdjahdfhjbhjdfabdfhjabhjfadjbhdfahjbadfhjbadfjbhadf")
 //            .icon(R.drawable.ic_account_circle)
 //                .infoRight("iㅁㅁnfo")
                 .infoCheck(true)
