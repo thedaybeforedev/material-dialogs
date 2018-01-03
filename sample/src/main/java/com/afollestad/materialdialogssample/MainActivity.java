@@ -583,13 +583,13 @@ public class MainActivity extends AppCompatActivity
   @OnClick(R.id.input)
   public void showInputDialog() {
     new MaterialDialog.Builder(this)
-        .title(R.string.input)
-        .content(R.string.input_content)
+        .headingInfoText(getString(R.string.input))
+//        .content(R.string.input_content)
         .inputType(
             InputType.TYPE_CLASS_TEXT
                 | InputType.TYPE_TEXT_VARIATION_PERSON_NAME
                 | InputType.TYPE_TEXT_FLAG_CAP_WORDS)
-        .inputRange(2, 16)
+//        .inputRange(2, 16)
         .positiveText(R.string.submit)
         .input(
             R.string.input_hint,

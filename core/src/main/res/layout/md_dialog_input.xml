@@ -39,15 +39,16 @@
       android:layout_height="wrap_content">
 
       <EditText
-        android:id="@android:id/input"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="1dp"
-        android:layout_marginLeft="-2dp"
-        android:layout_marginRight="-2dp"
-        android:focusable="true"
-        android:textSize="@dimen/md_content_textsize"
-        tools:ignore="TextFields"/>
+          android:layout_marginTop="32dp"
+          android:id="@android:id/input"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginBottom="32dp"
+          android:layout_marginLeft="-2dp"
+          android:layout_marginRight="-2dp"
+          android:focusable="true"
+          android:textSize="@dimen/md_content_edittextsize"
+          tools:ignore="TextFields"/>
 
       <TextView
         android:id="@+id/md_minMax"
