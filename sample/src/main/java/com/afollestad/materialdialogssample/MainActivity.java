@@ -584,6 +584,7 @@ public class MainActivity extends AppCompatActivity
   public void showInputDialog() {
     new MaterialDialog.Builder(this)
         .headingInfoText(getString(R.string.input))
+//            .title("aaaa")
 //        .content(R.string.input_content)
         .inputType(
             InputType.TYPE_CLASS_TEXT

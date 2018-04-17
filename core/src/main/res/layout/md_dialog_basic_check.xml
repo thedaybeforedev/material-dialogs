@@ -44,6 +44,7 @@
       android:layout_marginLeft="@dimen/md_notitle_vertical_padding"
       android:layout_marginRight="@dimen/md_notitle_vertical_padding"
       android:focusable="true"
+        android:layout_marginBottom="@dimen/md_content_padding_bottom"
       tools:text="Don't ask again"/>
 
   </LinearLayout>
