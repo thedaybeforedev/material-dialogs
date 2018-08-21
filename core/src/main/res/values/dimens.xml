@@ -62,7 +62,7 @@
 
   <dimen name="md_listitem_default_padding">8dp</dimen>
   <dimen name="md_button_frame_vertical_padding">8dp</dimen>
-  <dimen name="md_button_height">64dp</dimen>
+  <dimen name="md_button_height">52dp</dimen>
   <dimen name="md_headinginfo_textsize">14sp</dimen>
   <dimen name="md_title_textsize">20sp</dimen>
   <dimen name="md_content_textsize">14sp</dimen>
@@ -79,7 +79,7 @@
   <dimen name="md_action_corner_radius">2dp</dimen>
   <dimen name="md_divider_height">1dp</dimen>
 
-  <dimen name="md_bg_corner_radius">10dp</dimen>
+  <dimen name="md_bg_corner_radius">2dp</dimen>
   <dimen name="circular_progress_border">4dp</dimen>
   <dimen name="md_listitem_vertical_margin">12dp</dimen>
   <dimen name="md_listitem_vertical_margin_choice">8dp</dimen>
