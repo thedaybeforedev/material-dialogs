@@ -58,7 +58,7 @@
   <dimen name="md_neutral_button_margin">12dp</dimen>
 
   <!-- actual content padding bottom is 16dp, but we split between button bar and content -->
-  <dimen name="md_content_padding_bottom">24dp</dimen>
+  <dimen name="md_content_padding_bottom">4dp</dimen>
 
   <dimen name="md_listitem_default_padding">8dp</dimen>
   <dimen name="md_button_frame_vertical_padding">8dp</dimen>
