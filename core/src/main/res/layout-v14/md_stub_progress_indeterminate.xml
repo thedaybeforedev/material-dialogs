@@ -5,7 +5,7 @@
   android:layout_width="match_parent"
   android:layout_height="wrap_content"
   android:paddingTop="@dimen/md_content_padding_top"
-  android:paddingBottom="@dimen/md_content_padding_top"
+  android:paddingBottom="@dimen/md_dialog_bottom_padding"
   android:paddingLeft="@dimen/md_dialog_frame_margin"
   android:paddingRight="@dimen/md_dialog_frame_margin"
   android:gravity="start|center_vertical"

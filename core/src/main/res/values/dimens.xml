@@ -88,6 +88,8 @@
   <dimen name="md_dialog_vertical_margin">52dp</dimen>
   <dimen name="md_dialog_horizontal_margin">28dp</dimen>
 
+  <dimen name="md_dialog_bottom_padding">16dp</dimen>
+
   <dimen name="md_simpleitem_height">64dp</dimen>
   <dimen name="md_simpleitem_title_right_margin">32dp</dimen>
   <dimen name="md_simplelist_icon">32dp</dimen>
