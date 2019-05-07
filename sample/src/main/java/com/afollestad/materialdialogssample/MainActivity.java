@@ -446,7 +446,7 @@ public class MainActivity extends AppCompatActivity
     adapter.add(
         new MaterialSimpleListItem.Builder(this)
             .content("username@gmail.comgdfjkdfjkndfjnkdgfsnjkgjkndkjnfdgsnjkfgdsjknfgdskjnfdgsnkjfdgskjnsfdgjkldfgkldfghnlgdfakjnfgdajkdfnfdaghjlabjdffdbnajfdafdjahdfhjbhjdfabdfhjabhjfadjbhdfahjbadfhjbadfjbhadf")
-                .infoRight("inㄴㅁfsdfsfsfo")
+                .infoRight("36년 11개월 17일")
                 .infoCheck(false)
 //                .description("description")
             .icon(R.drawable.ic_account_circle)

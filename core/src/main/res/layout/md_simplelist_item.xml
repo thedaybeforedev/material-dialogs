@@ -60,6 +60,7 @@
         app:autoSizeTextType="uniform"
         app:autoSizeMaxTextSize="16sp"
         app:autoSizeStepGranularity="1sp"
+        android:lines="2"
         android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
         android:textSize="@dimen/md_simplelist_title_textsize"
