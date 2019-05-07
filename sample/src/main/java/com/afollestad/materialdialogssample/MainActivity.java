@@ -445,8 +445,8 @@ public class MainActivity extends AppCompatActivity
             .build());
     adapter.add(
         new MaterialSimpleListItem.Builder(this)
-            .content("user02@gmail.com")
-                .infoRight("inㄴㅁfo")
+            .content("username@gmail.comgdfjkdfjkndfjnkdgfsnjkgjkndkjnfdgsnjkfgdsjknfgdskjnfdgsnkjfdgskjnsfdgjkldfgkldfghnlgdfakjnfgdajkdfnfdaghjlabjdffdbnajfdafdjahdfhjbhjdfabdfhjabhjfadjbhdfahjbadfhjbadfjbhadf")
+                .infoRight("inㄴㅁfsdfsfsfo")
                 .infoCheck(false)
 //                .description("description")
             .icon(R.drawable.ic_account_circle)
