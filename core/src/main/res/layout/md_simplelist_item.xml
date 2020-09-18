@@ -39,14 +39,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="@dimen/md_simplelist_title_textsize"
-                android:textColor="@android:color/black"
+                android:textColor="@color/md_btn_selected"
                 tools:text="Title" android:maxLines="2" />
 
             <TextView
                 android:id="@android:id/message"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/md_simplelist_description"
                 android:textSize="@dimen/md_simplelist_description_textsize" android:visibility="gone"
                 tools:text="Title2" />
 

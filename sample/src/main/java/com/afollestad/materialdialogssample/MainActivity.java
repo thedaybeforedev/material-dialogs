@@ -184,7 +184,7 @@ public class MainActivity extends AppCompatActivity
     int color = ContextCompat.getColor(this, android.R.color.black);
     new MaterialDialog.Builder(this)
 //            .headingInfoText("gkgkgk")
-            .imageInfo(getResources().getDrawable(R.drawable.dialogimage))
+            .imageInfo(getResources().getDrawable(R.drawable.img_kpopup_keyboradopt))
         .title(R.string.useGoogleLocationServices)
         .content(R.string.useGoogleLocationServicesPrompt)
 //        .positiveText(R.string.agree)
@@ -211,6 +211,7 @@ public class MainActivity extends AppCompatActivity
         .headingInfoText(getString(R.string.socialNetworks))
         .items(R.array.socialNetworks)
         .itemsCallback((dialog, view, which, text) -> showToast(which + ": " + text))
+            .theme(Theme.DARK)
         .show();
   }
 
@@ -701,6 +702,7 @@ public class MainActivity extends AppCompatActivity
     new MaterialDialog.Builder(this)
         .title(R.string.progress_dialog)
         .content(R.string.please_wait)
+            .backgroundColor(ContextCompat.getColor(this,android.R.color.transparent))
         .progress(true, 0)
         .progressIndeterminateStyle(horizontal)
         .show();
