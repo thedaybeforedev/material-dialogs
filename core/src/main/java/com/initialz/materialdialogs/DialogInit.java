@@ -230,6 +230,7 @@ class DialogInit {
     if (builder.headingInfoText == null && dialog.headingInfoFrame != null) {
       dialog.headingInfoFrame.setVisibility(View.GONE);
     } else if(dialog.headingInfoFrame != null){
+      dialog.headingInfo.setTextColor(builder.titleColor);
       dialog.headingInfo.setText(builder.headingInfoText);
       dialog.headingInfoFrame.setVisibility(View.VISIBLE);
     }
